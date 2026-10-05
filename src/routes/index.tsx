@@ -3,14 +3,7 @@ import { PricingSection } from "@/components/PricingSection";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Ambient } from "@/components/Ambient";
-import {
-  identity,
-  disciplines,
-  metrics,
-  valueProps,
-  credibility,
-  whatsappLink,
-} from "@/data/site";
+import { identity, disciplines, metrics, valueProps, credibility, whatsappLink } from "@/data/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -133,7 +126,10 @@ function Home() {
                   }}
                 />
                 <div className="relative flex items-baseline justify-between">
-                  <span className="font-mono text-[11px] tracking-[0.2em]" style={{ color: d.accent }}>
+                  <span
+                    className="font-mono text-[11px] tracking-[0.2em]"
+                    style={{ color: d.accent }}
+                  >
                     {d.index}
                   </span>
                   <span className="eyebrow">Discipline</span>
@@ -199,8 +195,7 @@ function Home() {
         <div
           className="pointer-events-none absolute inset-0"
           style={{
-            background:
-              "radial-gradient(90% 120% at 50% 130%, var(--data), transparent 62%)",
+            background: "radial-gradient(90% 120% at 50% 130%, var(--data), transparent 62%)",
             opacity: 0.14,
           }}
         />

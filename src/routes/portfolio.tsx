@@ -22,8 +22,7 @@ export const Route = createFileRoute("/portfolio")({
       { title: "Portfolio — Mahfuzh Arsya" },
       {
         name: "description",
-        content:
-          "Selected work across web development, data science and cinematic video editing.",
+        content: "Selected work across web development, data science and cinematic video editing.",
       },
       { property: "og:title", content: "Portfolio — Mahfuzh Arsya" },
       {
@@ -266,7 +265,10 @@ function VideoEditing() {
             </div>
             <div className="flex items-end justify-between gap-4 border-t border-border p-5">
               <div>
-                <p className="font-mono text-[10px] tracking-[0.2em]" style={{ color: "var(--video)" }}>
+                <p
+                  className="font-mono text-[10px] tracking-[0.2em]"
+                  style={{ color: "var(--video)" }}
+                >
                   {r.no}
                 </p>
                 <h3 className="mt-2 font-display text-2xl">{r.title}</h3>
@@ -298,7 +300,6 @@ function VideoEditing() {
             </button>
           </div>
           <div className="mt-6 flex flex-1 items-center">
-            {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
             <video
               src={reels[open]!.src}
               controls

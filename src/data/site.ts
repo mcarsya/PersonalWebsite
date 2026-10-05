@@ -100,8 +100,14 @@ export const ethos = [
 export const techMatrix = [
   { group: "Development", items: ["Full-Stack Development", "Vue.js", "WordPress", "Moodle LMS"] },
   { group: "Data", items: ["Python", "Data Visualization", "Analytics", "Reporting"] },
-  { group: "Motion & Film", items: ["Adobe Premiere Pro", "After Effects", "Motion Design", "Color Grading"] },
-  { group: "Design", items: ["Brand Identity", "Social Media Design", "Graphic Design", "Videography"] },
+  {
+    group: "Motion & Film",
+    items: ["Adobe Premiere Pro", "After Effects", "Motion Design", "Color Grading"],
+  },
+  {
+    group: "Design",
+    items: ["Brand Identity", "Social Media Design", "Graphic Design", "Videography"],
+  },
 ];
 
 export const languages = [

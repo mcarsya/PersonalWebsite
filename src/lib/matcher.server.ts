@@ -16,8 +16,14 @@ Return ONLY valid JSON, no markdown: {"services":[{"key":"web|data|video","title
 
 export async function matchBrief(brief: string, signal?: AbortSignal): Promise<MatchResult> {
   const apiKey = process.env["GEMINI_API_KEY"];
-  if (!apiKey) return { services: [], summary: "", whatsappMessage: "", error: "AI belum dikonfigurasi. Pastikan GEMINI_API_KEY ada di file .env." };
-  
+  if (!apiKey)
+    return {
+      services: [],
+      summary: "",
+      whatsappMessage: "",
+      error: "AI belum dikonfigurasi. Pastikan GEMINI_API_KEY ada di file .env.",
+    };
+
   const google = createGoogleGenerativeAI({
     apiKey,
   });
@@ -33,7 +39,9 @@ export async function matchBrief(brief: string, signal?: AbortSignal): Promise<M
     const text = await result.text;
     const json = text.slice(text.indexOf("{"), text.lastIndexOf("}") + 1);
     const parsed = JSON.parse(json) as MatchResult;
-    parsed.services = (parsed.services ?? []).filter((s) => ["web", "data", "video"].includes(s.key));
+    parsed.services = (parsed.services ?? []).filter((s) =>
+      ["web", "data", "video"].includes(s.key),
+    );
     return parsed;
   } catch (e: unknown) {
     console.error("matchBrief failed", e);

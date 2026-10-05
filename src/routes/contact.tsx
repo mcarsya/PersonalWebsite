@@ -30,8 +30,7 @@ function Contact() {
   const [sent, setSent] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const accent =
-    disciplines.find((d) => d.key === discipline)?.accent ?? "var(--foreground)";
+  const accent = disciplines.find((d) => d.key === discipline)?.accent ?? "var(--foreground)";
 
   return (
     <div className="px-4 pb-10 md:px-8">

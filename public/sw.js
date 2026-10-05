@@ -2,9 +2,7 @@ const CACHE = "ma-portfolio-v1";
 const CORE = ["/", "/about", "/portfolio", "/contact", "/manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll(CORE).catch(() => undefined)),
-  );
+  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(CORE).catch(() => undefined)));
   self.skipWaiting();
 });
 

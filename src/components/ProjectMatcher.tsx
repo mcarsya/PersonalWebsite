@@ -75,8 +75,15 @@ export function ProjectMatcher() {
               {res.summary && <p className="text-muted-foreground">{res.summary}</p>}
               <div className="grid gap-3">
                 {res.services.map((s) => (
-                  <div key={s.key} className="border border-border bg-card p-5" style={{ borderLeft: `2px solid ${accent[s.key]}` }}>
-                    <p className="font-mono text-[11px] tracking-[0.18em] uppercase" style={{ color: accent[s.key] }}>
+                  <div
+                    key={s.key}
+                    className="border border-border bg-card p-5"
+                    style={{ borderLeft: `2px solid ${accent[s.key]}` }}
+                  >
+                    <p
+                      className="font-mono text-[11px] tracking-[0.18em] uppercase"
+                      style={{ color: accent[s.key] }}
+                    >
                       {s.title}
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.reason}</p>

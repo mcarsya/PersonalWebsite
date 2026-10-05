@@ -22,7 +22,7 @@ export function CursorFollower() {
       x = e.clientX;
       y = e.clientY;
       const el = (e.target as HTMLElement | null)?.closest?.("[data-cursor]");
-      setLabel(el ? ((el as HTMLElement).dataset["cursor"] || "") : null);
+      setLabel(el ? (el as HTMLElement).dataset["cursor"] || "" : null);
     };
 
     const loop = () => {

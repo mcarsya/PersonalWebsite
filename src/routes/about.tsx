@@ -50,8 +50,7 @@ function About() {
             <div
               className="pointer-events-none absolute inset-0 opacity-70 mix-blend-color transition-opacity duration-700 group-hover:opacity-0"
               style={{
-                background:
-                  "linear-gradient(140deg, var(--web), transparent 45%, var(--video))",
+                background: "linear-gradient(140deg, var(--web), transparent 45%, var(--video))",
               }}
             />
             <figcaption className="eyebrow absolute bottom-4 left-4">
