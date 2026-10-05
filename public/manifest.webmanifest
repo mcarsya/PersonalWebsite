@@ -1,0 +1,16 @@
+{
+  "name": "Mahfuzh Arsya — Portfolio",
+  "short_name": "MA",
+  "description": "Bridge Your Digital — software engineering, data science and cinematic editing.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08080a",
+  "theme_color": "#08080a",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
