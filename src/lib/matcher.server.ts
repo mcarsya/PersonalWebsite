@@ -1,7 +1,5 @@
-import { createOpenAI } from "@ai-sdk/openai";
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { streamText } from "ai";
-
-const RUN_ID = "X-Lovable-AIG-Run-ID";
 
 export type MatchResult = {
   services: { key: "web" | "data" | "video"; title: string; reason: string }[];
@@ -17,37 +15,20 @@ Reply in the same language as the brief (Indonesian if the brief is Indonesian).
 Return ONLY valid JSON, no markdown: {"services":[{"key":"web|data|video","title":string,"reason":string}],"summary":string,"whatsappMessage":string}. Each reason max 30 words; summary max 40 words.`;
 
 export async function matchBrief(brief: string, signal?: AbortSignal): Promise<MatchResult> {
-  const apiKey = process.env["LOVABLE_API_KEY"];
-  if (!apiKey) return { services: [], summary: "", whatsappMessage: "", error: "AI belum dikonfigurasi." };
-  let runId: string | undefined;
-  const openai = createOpenAI({
-    baseURL: "https://ai.gateway.lovable.dev/v1",
+  const apiKey = process.env["GEMINI_API_KEY"];
+  if (!apiKey) return { services: [], summary: "", whatsappMessage: "", error: "AI belum dikonfigurasi. Pastikan GEMINI_API_KEY ada di file .env." };
+  
+  const google = createGoogleGenerativeAI({
     apiKey,
-    headers: { "Lovable-API-Key": apiKey, "X-Lovable-AIG-SDK": "vercel-ai-sdk" },
-    fetch: async (input, init) => {
-      const h = new Headers(init?.headers);
-      if (runId) h.set(RUN_ID, runId);
-      const res = await fetch(input, { ...init, headers: h });
-      runId ??= res.headers.get(RUN_ID) ?? undefined;
-      return res;
-    },
   });
+
   try {
     const result = streamText({
-      model: openai.responses("openai/gpt-6-astra"),
+      model: google("gemini-2.5-flash"),
       system: SYSTEM,
       prompt: `Client brief:\n${brief}`,
       maxRetries: 0,
       ...(signal ? { abortSignal: signal } : {}),
-      providerOptions: {
-        openai: {
-          forceReasoning: true,
-          reasoningEffort: "low",
-          reasoningSummary: "auto",
-          store: false,
-          include: ["reasoning.encrypted_content"],
-        },
-      },
     });
     const text = await result.text;
     const json = text.slice(text.indexOf("{"), text.lastIndexOf("}") + 1);
