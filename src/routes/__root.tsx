@@ -81,8 +81,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#08080a" },
       { name: "author", content: "Mahfuzh Arsya" },
+      { name: "keywords", content: "Mahfuzh Arsya, Full-Stack Developer, Motion Design, Data Visualization, Surabaya, Web Developer Indonesia" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/logo.jpg" },
+      { property: "og:site_name", content: "Mahfuzh Arsya Portfolio" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "/logo.jpg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -108,7 +112,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="select-none" onCopy={(e) => e.preventDefault()}>
         {children}
         <Scripts />
       </body>

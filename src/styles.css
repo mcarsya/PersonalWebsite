@@ -198,3 +198,8 @@
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Pastikan input form tetap bisa diblok/diketik */
+input, textarea {
+  user-select: text;
+}

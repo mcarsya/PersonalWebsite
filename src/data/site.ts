@@ -183,21 +183,36 @@ export const education = [
 export const webProjects = [
   {
     no: "001",
-    name: "Campus Moodle LMS",
-    category: "Learning Platform",
-    stack: "Moodle · PHP · UI/UX Configuration",
-    year: "2022",
+    name: "IMM UINSA Website",
+    category: "Organization Portal",
+    stack: "WordPress · CSS Editing · Photo & Structure",
+    year: "2023",
+    description:
+      "Helped edit the CSS styling, uploaded member photos and updated the organizational structure for the IMM UINSA campus chapter.",
     demo: "https://linktr.ee/mahfuzharsya",
-    github: "https://github.com/",
+    github: null as string | null,
   },
   {
     no: "002",
     name: "UKPI News & Landing Pages",
     category: "Content Platform",
-    stack: "WordPress · Custom Theming · SEO",
+    stack: "WordPress · Elementor · Custom Theming · SEO",
     year: "2024",
+    description:
+      "Built and maintained the UKPI UINSA Surabaya website using WordPress with Elementor — articles, announcements and organizational content.",
     demo: "https://linktr.ee/mahfuzharsya",
-    github: "https://github.com/",
+    github: null as string | null,
+  },
+  {
+    no: "003",
+    name: "SAILS — Campus Moodle LMS",
+    category: "Learning Platform",
+    stack: "Moodle · PHP · UI/UX Configuration",
+    year: "2022",
+    description:
+      "Developed and maintained the official UIN Sunan Ampel Surabaya e-learning platform (SAILS) built on Moodle for university-wide use.",
+    demo: "https://linktr.ee/mahfuzharsya",
+    github: null as string | null,
   },
 ];
 

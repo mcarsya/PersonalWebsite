@@ -10,8 +10,9 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import project01 from "@/assets/project-01.jpg";
-import project02 from "@/assets/project-02.jpg";
+import projectImm from "@/assets/project-imm.png";
+import projectUkpi from "@/assets/project-ukpi.png";
+import projectMoodle from "@/assets/project-moodle.png";
 import reel01 from "@/assets/reel-01.jpg";
 import reel02 from "@/assets/reel-02.jpg";
 import { webProjects, studies, reels } from "@/data/site";
@@ -41,7 +42,7 @@ const tabs = [
   { key: "video", label: "Video Editing" },
 ] as const;
 
-const projectShots = [project01, project02];
+const projectShots = [projectImm, projectUkpi, projectMoodle];
 const reelPosters = [reel01, reel02];
 
 function WebDev() {
@@ -80,6 +81,11 @@ function WebDev() {
               <p className="eyebrow mt-2">
                 {p.category} / {p.year}
               </p>
+              {p.description ? (
+                <p className="mt-3 max-w-[40ch] text-sm leading-relaxed text-muted-foreground">
+                  {p.description}
+                </p>
+              ) : null}
             </div>
             <p className="font-mono text-[11px] tracking-[0.1em] text-muted-foreground">
               {p.stack}
@@ -94,15 +100,17 @@ function WebDev() {
               >
                 Live demo
               </a>
-              <a
-                href={p.github}
-                target="_blank"
-                rel="noreferrer"
-                data-cursor="Code"
-                className="border border-border px-4 py-2 font-mono text-[10px] tracking-[0.18em] uppercase hover:bg-secondary"
-              >
-                GitHub
-              </a>
+              {p.github ? (
+                <a
+                  href={p.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cursor="Code"
+                  className="border border-border px-4 py-2 font-mono text-[10px] tracking-[0.18em] uppercase hover:bg-secondary"
+                >
+                  GitHub
+                </a>
+              ) : null}
             </div>
           </li>
         ))}
