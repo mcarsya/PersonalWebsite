@@ -1,48 +1,32 @@
 # Mahfuzh Arsya — Personal Website & Portfolio
 
-Personal website and portfolio of Mahfuzh Arsya, specializing in Full-Stack Development, Motion Design, and Data Visualization.
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-## Tech Stack
+Repositori resmi untuk situs web pribadi dan portofolio profesional Mahfuzh Arsya. Platform ini dikembangkan sebagai etalase komprehensif yang menampilkan keahlian multidisiplin, secara khusus mencakup Full-Stack Development, Motion Design, dan Data Visualization.
 
-- **Framework:** [TanStack Start](https://tanstack.com/start)
-- **Language:** TypeScript
-- **Library:** React 19
-- **Styling:** Tailwind CSS
-- **UI Components:** shadcn/ui
+## 🚀 Tech Stack Architecture
 
-## Getting Started
+Infrastruktur sistem ini dibangun menggunakan teknologi web modern berkinerja tinggi:
 
-To run this project locally, make sure you have [Node.js](https://nodejs.org/) installed.
+*   **Framework:** [TanStack Start](https://tanstack.com/start)
+*   **Language:** [TypeScript](https://www.typescriptlang.org/)
+*   **UI Library:** [React 19](https://react.dev/)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **Components:** [shadcn/ui](https://ui.shadcn.com/)
 
-### 1. Clone the repository
+## ⚙️ Local Development Environment
 
-```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
-```
+### Prerequisites
 
-### 2. Install dependencies
+Pastikan sistem Anda telah menginstal dependensi berikut sebelum memulai:
+*   [Node.js](https://nodejs.org/) (Direkomendasikan versi 18.x atau terbaru)
+*   Package manager (npm, pnpm, atau yarn)
 
-```bash
-npm install
-```
+### Installation & Execution
 
-### 3. Run the development server
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:8080](http://localhost:8080) in your browser to see the result.
-
-## Project Structure
-
-- `src/routes/` - File-based routing for pages (TanStack Router)
-- `src/components/` - Reusable React components and UI elements
-- `src/assets/` - Static assets like images and PDFs
-- `src/data/` - Static data for the portfolio content
-- `src/lib/` - Utility functions and helpers
-
-## License
-
-All rights reserved.
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/username-anda/nama-repo-anda.git](https://github.com/username-anda/nama-repo-anda.git)
+   cd nama-repo-anda
