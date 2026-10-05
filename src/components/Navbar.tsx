@@ -43,9 +43,7 @@ export function Navbar() {
     <header className="fixed top-0 right-0 left-0 z-50 px-4 pt-4 md:px-8 md:pt-6">
       <nav className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 border border-border bg-background/70 px-4 py-3 backdrop-blur-xl md:px-6">
         <Link to="/" className="group flex items-center gap-3" data-cursor="Home">
-          <span className="flex size-8 items-center justify-center border border-border-strong font-display text-sm">
-            {identity.monogram}
-          </span>
+          <img src="/logo.jpg" alt="Logo" className="size-8 object-contain" />
           <span className="font-mono text-[11px] tracking-[0.18em] text-muted-foreground tabular-nums">
             {time ?? "--:--"} {identity.tzLabel}
           </span>
