@@ -249,6 +249,38 @@ export const studies = [
       { x: "Q6", a: 88, b: 64 },
     ],
   },
+  {
+    no: "003",
+    title: "Campaign Reach & Conversion",
+    objective:
+      "Analyse reach-to-conversion funnel across multi-channel digital campaigns for organisational fundraising events.",
+    metric: "+35% reach · +15% conversion",
+    stack: "Python · SQL · Funnel Analysis · Reporting",
+    series: [
+      { x: "M1", a: 18, b: 16 },
+      { x: "M2", a: 32, b: 20 },
+      { x: "M3", a: 45, b: 24 },
+      { x: "M4", a: 56, b: 28 },
+      { x: "M5", a: 68, b: 32 },
+      { x: "M6", a: 82, b: 36 },
+    ],
+  },
+  {
+    no: "004",
+    title: "Content Engagement Heatmap",
+    objective:
+      "Map audience engagement patterns across content types and posting schedules to optimise publishing strategy.",
+    metric: "+28% avg. engagement rate",
+    stack: "Analytics · Data Viz · Python · Scheduling",
+    series: [
+      { x: "D1", a: 35, b: 30 },
+      { x: "D2", a: 50, b: 34 },
+      { x: "D3", a: 62, b: 36 },
+      { x: "D4", a: 74, b: 38 },
+      { x: "D5", a: 80, b: 40 },
+      { x: "D6", a: 91, b: 42 },
+    ],
+  },
 ];
 
 export const reels = [
@@ -267,5 +299,21 @@ export const reels = [
     duration: "01:48",
     credits: ["Edit Mahfuzh Arsya", "Motion Mahfuzh Arsya", "Prod. Worthydays"],
     src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+  },
+  {
+    no: "003",
+    title: "Promotional Film / GenBI UINSA",
+    role: "Director & Editor",
+    duration: "03:22",
+    credits: ["Edit Mahfuzh Arsya", "Direction Mahfuzh Arsya", "Prod. GenBI UINSA"],
+    src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+  },
+  {
+    no: "004",
+    title: "Social Reel / Kelana Jiwa",
+    role: "Editor & Motion Designer",
+    duration: "00:58",
+    credits: ["Edit Mahfuzh Arsya", "Motion Mahfuzh Arsya", "Prod. Kelana Jiwa . Co"],
+    src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
   },
 ];

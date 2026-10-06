@@ -15,6 +15,8 @@ import projectUkpi from "@/assets/project-ukpi.png";
 import projectMoodle from "@/assets/project-moodle.png";
 import reel01 from "@/assets/reel-01.jpg";
 import reel02 from "@/assets/reel-02.jpg";
+import reel03 from "@/assets/reel-03.jpg";
+import reel04 from "@/assets/reel-04.jpg";
 import { webProjects, studies, reels } from "@/data/site";
 
 export const Route = createFileRoute("/portfolio")({
@@ -137,18 +139,37 @@ function WebDev() {
 }
 
 function DataScience() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (dir: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = scrollRef.current.clientWidth * 0.8;
+      scrollRef.current.scrollBy({ left: dir === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
+    }
+  };
+
   return (
     <section>
-      <header className="flex items-baseline justify-between border-b border-border pb-5">
-        <h2 className="display-lg" style={{ color: "var(--data)" }}>
-          Data Science
-        </h2>
-        <p className="eyebrow">Laboratory</p>
+      <header className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-5">
+        <div>
+          <h2 className="display-lg" style={{ color: "var(--data)" }}>
+            Data Science
+          </h2>
+          <p className="eyebrow mt-1">Laboratory</p>
+        </div>
+        <div className="flex gap-2">
+          <button onClick={() => scroll('left')} className="border border-border p-2 hover:bg-secondary transition-colors" aria-label="Scroll left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button onClick={() => scroll('right')} className="border border-border p-2 hover:bg-secondary transition-colors" aria-label="Scroll right">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </header>
 
-      <div className="mt-10 grid gap-6 lg:grid-cols-2">
+      <div ref={scrollRef} className="mt-10 flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         {studies.map((s) => (
-          <article key={s.no} className="border border-border bg-surface/60">
+          <article key={s.no} className="border border-border bg-surface/60 min-w-[85vw] md:min-w-[45%] lg:min-w-[40%] shrink-0 snap-start">
             <div className="flex items-center justify-between border-b border-border px-5 py-3 font-mono text-[10px] tracking-[0.18em] text-muted-foreground uppercase">
               <span>
                 ~/studies/{s.no} <span style={{ color: "var(--data)" }}>●</span>
@@ -224,23 +245,41 @@ function DataScience() {
 
 function VideoEditing() {
   const [open, setOpen] = useState<number | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (dir: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = scrollRef.current.clientWidth * 0.8;
+      scrollRef.current.scrollBy({ left: dir === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
+    }
+  };
 
   return (
     <section>
-      <header className="flex items-baseline justify-between border-b border-border pb-5">
-        <h2 className="display-lg" style={{ color: "var(--video)" }}>
-          Video Editing
-        </h2>
-        <p className="eyebrow">Reels</p>
+      <header className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-5">
+        <div>
+          <h2 className="display-lg" style={{ color: "var(--video)" }}>
+            Video Editing
+          </h2>
+          <p className="eyebrow mt-1">Reels</p>
+        </div>
+        <div className="flex gap-2">
+          <button onClick={() => scroll('left')} className="border border-border p-2 hover:bg-secondary transition-colors" aria-label="Scroll left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button onClick={() => scroll('right')} className="border border-border p-2 hover:bg-secondary transition-colors" aria-label="Scroll right">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </header>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
+      <div ref={scrollRef} className="mt-10 flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         {reels.map((r, i) => (
           <button
             key={r.no}
             onClick={() => setOpen(i)}
             data-cursor="Play"
-            className="group relative overflow-hidden border border-border text-left"
+            className="group relative overflow-hidden border border-border text-left min-w-[85vw] md:min-w-[45%] lg:min-w-[40%] shrink-0 snap-start"
             onMouseEnter={(e) => {
               const v = e.currentTarget.querySelector("video");
               if (v) void v.play().catch(() => {});
