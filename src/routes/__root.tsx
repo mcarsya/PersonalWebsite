@@ -81,7 +81,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#08080a" },
       { name: "author", content: "Mahfuzh Arsya" },
-      { name: "keywords", content: "Mahfuzh Arsya, Full-Stack Developer, Motion Design, Data Visualization, Surabaya, Web Developer Indonesia" },
+      {
+        name: "keywords",
+        content:
+          "Mahfuzh Arsya, Full-Stack Developer, Motion Design, Data Visualization, Surabaya, Web Developer Indonesia",
+      },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/logo.jpg" },
       { property: "og:site_name", content: "Mahfuzh Arsya Portfolio" },
